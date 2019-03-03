@@ -1,0 +1,21 @@
+{
+    "name": "CeilingFanRemote",
+    "docs": "https://github.com/rl1131/udi-rffans-poly",
+    "type": "python3",
+    "executable": "rffans.py",
+    "install": "install.sh",
+    "shortPoll": "120",
+    "longPoll": "600",
+    "description": "Provide ISY support for RF remote controlled ceiling fans via Polyglot.",
+    "notice": "Copyright 2019 Robert Lee.  Licensed under the terms of the MIT License.  All trademarks used herein are the property of their respective owners.",
+    "credits": [
+        {
+            "title": "udi-rffans-poly: A Polyglot v2 interface to RF Remote Controlled Ceiling Fans",
+            "author": "Robert Lee (rl1131)",
+            "version": "0.1.0",
+            "date": "Mar 2, 2019",
+            "source": "https://github.com/rl1131/udi-rffans-poly",
+            "license": "https://github.com/rl1131/udi-rffans-poly/blob/master/LICENSE"
+        }
+    ]
+}

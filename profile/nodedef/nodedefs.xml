@@ -1,0 +1,34 @@
+<nodeDefs>
+    <!-- NODE DEF from 5.0 document http://wiki.universal-devices.com/index.php?title=V50_MAIN -->
+    <!-- Wemo Control Node -->
+    <nodeDef id="WEMO_CTRL" nls="CTRL">
+        <editors />
+        <sts>
+            <st id="ST" editor="BOOL" />
+        </sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="DISCOVER" />
+            </accepts>
+        </cmds>
+    </nodeDef>
+    <!-- Wemo Switch Node -->
+    <nodeDef id="WEMO_SWITCH" nls="SWITCH">
+        <editors />
+        <sts>
+            <st id="ST" editor="BOOL" />
+        </sts>
+        <cmds>
+            <sends>
+                <cmd id="DON" />
+                <cmd id="DOF" />
+            </sends>
+            <accepts>
+                <cmd id="DON" />
+                <cmd id="DOF" />
+                <cmd id="QUERY" />                
+            </accepts>
+        </cmds>
+    </nodeDef>
+</nodeDefs>

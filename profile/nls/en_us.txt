@@ -1,0 +1,14 @@
+# controller
+ND-WEMO_CTRL-NAME = Wemo Controller
+ND-WEMO_CTRL-ICON = LampAndSwitch
+CMD-CTRL-DISCOVER-NAME = Re-Discover
+ST-CTRL-ST-NAME = Online
+
+# switch node
+ND-WEMO_SWITCH-NAME = Wemo Switch
+ST-SWITCH-ST-NAME = Status
+ST-SWITCH-DON-NAME = On
+ST-SWITCH-DOF-NAME = Off
+CMD-SWITCH-DON-NAME = On
+CMD-SWITCH-DOF-NAME = Off
+CMD-SWITCH-QUERY-NAME = Query
