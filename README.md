@@ -1,4 +1,4 @@
-# Polyglot v2 Node Server for RF Fan Control of Harbor Breeze Fan
+# Polyglot v2 Node Server for RF Ceiling Fan Control
 
 NOTE: THIS IS A WORK IN PROGRESS and not yet ready
 

@@ -1,14 +1,39 @@
 # controller
-ND-WEMO_CTRL-NAME = Wemo Controller
-ND-WEMO_CTRL-ICON = LampAndSwitch
+ND-PDMREMOTE_CTRL-NAME = PDM Remote Controller
+ND-PDMREMOTE_CTRL-ICON = GenericRsp
 CMD-CTRL-DISCOVER-NAME = Re-Discover
 ST-CTRL-ST-NAME = Online
 
-# switch node
-ND-WEMO_SWITCH-NAME = Wemo Switch
-ST-SWITCH-ST-NAME = Status
-ST-SWITCH-DON-NAME = On
-ST-SWITCH-DOF-NAME = Off
-CMD-SWITCH-DON-NAME = On
-CMD-SWITCH-DOF-NAME = Off
-CMD-SWITCH-QUERY-NAME = Query
+# Harbor Breeze 6-speed fan remote node
+ND-HB6SPEED-NAME = Harbor Breeze 6 Speed Remote Control
+ND-HB6SPEED-ICON = GenericRsp
+
+ST-HB6SPEED-ST-NAME = Speed
+ST-HB6SPEED-GV0-NAME = Mode
+ST-HB6SPEED-GV1-NAME = GPIO#
+
+CMD-HB6SPEED-DON-NAME = On
+CMD-HB6SPEED-DOF-NAME = Off
+CMD-HB6SPEED-DFON-NAME = Fast On
+CMD-HB6SPEED-DFOF-NAME = Fast Off
+CMD-HB6SPEED-BRT-NAME = Speed Up
+CMD-HB6SPEED-DIM-NAME = Speed Down
+
+CMD-HB6SPEED-QUERY-NAME = Query
+CMD-HB6SPEED-SET_MODE-NAME = Mode
+CMD-HB6SPEED-SET_SPEED-NAME = Fan Speed
+CMD-HB6SPEED-SET_GPIO-NAME = GPIO#
+
+# HB6SPEED Modes
+FAN_MODE-0 = Summer
+FAN_MODE-1 = Winter
+
+# HB6SPEED Speed Settings (Air blows up in Winter, down in Summer)
+FAN_SPEED-0 = Fan Off
+FAN_SPEED-1 = Fan Speed 1
+FAN_SPEED-2 = Fan Speed 2
+FAN_SPEED-3 = Fan Speed 3
+FAN_SPEED-4 = Fan Speed 4
+FAN_SPEED-5 = Fan Speed 5
+FAN_SPEED-6 = Fan Speed 6
+

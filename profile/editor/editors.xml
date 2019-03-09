@@ -1,6 +1,11 @@
 <editors>
-    <!-- Boolean -->
-    <editor id="BOOL">
-        <range uom="2" subset="0,1" />
+    <editor id="MODE">
+        <range uom="25" subset="0,1" nls="FAN_MODE" />
+    </editor>
+    <editor id="SPEED">
+        <range uom="25" subset="0-6" nls="FAN_SPEED" />
+    </editor>
+    <editor id="GPIO">
+        <range uom="25" subset="2-27" />
     </editor>
 </editors>
