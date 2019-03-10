@@ -1,7 +1,6 @@
 <nodeDefs>
     <!-- NODE DEF from 5.0 document http://wiki.universal-devices.com/index.php?title=V50_MAIN -->
-    <!-- Wemo Control Node -->
-    <nodeDef id="PDMREMOTE_CTRL" nls="CTRL">
+    <nodeDef id="PDMREMOTE" nls="CTRL">
         <editors />
         <sts>
             <st id="ST" editor="BOOL" />
@@ -13,8 +12,7 @@
             </accepts>
         </cmds>
     </nodeDef>
-    <!-- Wemo Switch Node -->
-    <nodeDef id="HB6SPEED" nls="HB6SPEED">
+    <nodeDef id="HB6REMOTE" nls="HB6">
         <editors />
         <sts>
             <st id="ST" editor="SPEED" />
@@ -31,9 +29,9 @@
                 <cmd id="BRT" />
                 <cmd id="DIM" />
                 <cmd id="QUERY" />
-                <cmd id="SET_MODE" editor="MODE">
-                <cmd id="SET_SPEED" editor="SPEED">
-                <cmd id="SET_GPIO" editor="GPIO">
+                <cmd id="SETSPEED" editor="SPEED">
+                <cmd id="SETMODE" editor="MODE">
+                <cmd id="SETGPIO" editor="GPIO">
             </accepts>
         </cmds>
     </nodeDef>

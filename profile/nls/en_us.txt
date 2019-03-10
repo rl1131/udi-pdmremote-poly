@@ -1,34 +1,34 @@
 # controller
-ND-PDMREMOTE_CTRL-NAME = PDM Remote Controller
-ND-PDMREMOTE_CTRL-ICON = GenericRsp
+ND-PDMREMOTE-NAME = PDM Remote Control
+ND-PDMREMOTE-ICON = GenericRsp
 CMD-CTRL-DISCOVER-NAME = Re-Discover
 ST-CTRL-ST-NAME = Online
 
-# Harbor Breeze 6-speed fan remote node
-ND-HB6SPEED-NAME = Harbor Breeze 6 Speed Remote Control
-ND-HB6SPEED-ICON = GenericRsp
+# Harbor Breeze 6 speed fan remote node
+ND-HB6-NAME = Harbor Breeze 6 Speed Remote Control
+ND-HB6-ICON = GenericRsp
 
-ST-HB6SPEED-ST-NAME = Speed
-ST-HB6SPEED-GV0-NAME = Mode
-ST-HB6SPEED-GV1-NAME = GPIO#
+ST-HB6-ST-NAME = Speed
+ST-HB6-GV0-NAME = Mode
+ST-HB6-GV1-NAME = GPIO
 
-CMD-HB6SPEED-DON-NAME = On
-CMD-HB6SPEED-DOF-NAME = Off
-CMD-HB6SPEED-DFON-NAME = Fast On
-CMD-HB6SPEED-DFOF-NAME = Fast Off
-CMD-HB6SPEED-BRT-NAME = Speed Up
-CMD-HB6SPEED-DIM-NAME = Speed Down
+CMD-HB6-DON-NAME = On
+CMD-HB6-DOF-NAME = Off
+CMD-HB6-DFON-NAME = Fast On
+CMD-HB6-DFOF-NAME = Fast Off
+CMD-HB6-BRT-NAME = Speed Up
+CMD-HB6-DIM-NAME = Speed Down
 
-CMD-HB6SPEED-QUERY-NAME = Query
-CMD-HB6SPEED-SET_MODE-NAME = Mode
-CMD-HB6SPEED-SET_SPEED-NAME = Fan Speed
-CMD-HB6SPEED-SET_GPIO-NAME = GPIO#
+CMD-HB6-QUERY-NAME = Query
+CMD-HB6-SETMODE-NAME = Mode
+CMD-HB6-SETSPEED-NAME = Fan Speed
+CMD-HB6-SETGPIO-NAME = GPIO
 
-# HB6SPEED Modes
+# HB6 Modes
 FAN_MODE-0 = Summer
 FAN_MODE-1 = Winter
 
-# HB6SPEED Speed Settings (Air blows up in Winter, down in Summer)
+# HB6 Speed Settings (Air blows up in Winter, down in Summer)
 FAN_SPEED-0 = Fan Off
 FAN_SPEED-1 = Fan Speed 1
 FAN_SPEED-2 = Fan Speed 2

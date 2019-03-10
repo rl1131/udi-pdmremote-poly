@@ -1,4 +1,7 @@
 <editors>
+    <editor id="BOOL">
+        <range uom="2" subset="0,1" />
+    </editor>
     <editor id="MODE">
         <range uom="25" subset="0,1" nls="FAN_MODE" />
     </editor>

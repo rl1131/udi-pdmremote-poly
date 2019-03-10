@@ -1,8 +1,11 @@
+#!/usr/bin/env python3
+
 import sys
 import socket
 import logging
 import polyinterface
 import wiringpi
+
 from remotedb import harbor_breeze_6_speed_dc_remote_0 as hbremote
 
 LOGGER = polyinterface.LOGGER
@@ -50,7 +53,7 @@ class Control(polyinterface.Controller):
                 LOGGER.info('PDM Remote {} Found. Adding to ISY.'.format(name))
                 self.addNode(HB6SpeedRemote(self, self.address, addr, name, remote, gpiopin))
 
-    id = 'PDMREMOTE_CTRL'
+    id = 'PDMREMOTE'
     commands = {'DISCOVER': discover}
     drivers = [{'driver': 'ST', 'value': 1, 'uom': 2}]
 
@@ -131,6 +134,7 @@ class HB6SpeedRemote(polyinterface.Node):
         self.gpiopin = gpiopin
         self.pdmremote = PDMRemote(self.remotedata, self.gpiopin)
         self.last_on_speed = 1
+        self.updateInfo( )
 
     def updateInfo(self):
         """ Get current switch status.  If it is doesn't match our
@@ -217,22 +221,23 @@ class HB6SpeedRemote(polyinterface.Node):
                    'BRT' : speedinc,
                    'DIM' : speeddec,
                    'QUERY': query,
-                   'SET_MODE' : setmode,
-                   'SET_SPEED' : setspeed,
-                   'SET_GPIO' : setgpio
+                   'SETSPEED' : setspeed,
+                   'SETMODE' : setmode,
+                   'SETGPIO' : setgpio
                }
 
-    id = 'HB6SPEED'
+    id = 'HB6REMOTE'
 
 
-# class cmd:
-    # def __init__(self, val):
-        # self.val = val
-    # def get(self, s):
-        # return self.val
-
-# r = HB6SpeedRemote(None, None, None, 'Hi There', (hbremote, 17))
-# c = cmd(1)
-# r.setmode(c)
-# c = cmd(6)
-
+if __name__ == "__main__":
+    try:
+        LOGGER.debug("Getting Poly")
+        poly = polyinterface.Interface("PDMRemote")
+        LOGGER.debug("Starting Poly")
+        poly.start()
+        LOGGER.debug("Getting Control")
+        pdmremote = Control(poly)
+        LOGGER.debug("Starting Control")
+        pdmremote.runForever()
+    except (KeyboardInterrupt, SystemExit):
+        sys.exit(0)
