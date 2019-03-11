@@ -18,17 +18,16 @@ CMD-HB6-DFON-NAME = Fast On
 CMD-HB6-DFOF-NAME = Fast Off
 CMD-HB6-BRT-NAME = Speed Up
 CMD-HB6-DIM-NAME = Speed Down
-
 CMD-HB6-QUERY-NAME = Query
 CMD-HB6-SETMODE-NAME = Mode
-CMD-HB6-SETSPEED-NAME = Fan Speed
+CMD-HB6-SETSPEED-NAME = Speed
 CMD-HB6-SETGPIO-NAME = GPIO
 
 # HB6 Modes
 FAN_MODE-0 = Summer
 FAN_MODE-1 = Winter
 
-# HB6 Speed Settings (Air blows up in Winter, down in Summer)
+# HB6 Speed Settings (Fan blows up in Winter, down in Summer)
 FAN_SPEED-0 = Fan Off
 FAN_SPEED-1 = Fan Speed 1
 FAN_SPEED-2 = Fan Speed 2
@@ -36,4 +35,5 @@ FAN_SPEED-3 = Fan Speed 3
 FAN_SPEED-4 = Fan Speed 4
 FAN_SPEED-5 = Fan Speed 5
 FAN_SPEED-6 = Fan Speed 6
+
 

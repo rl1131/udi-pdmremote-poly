@@ -1,5 +1,5 @@
 {
-    "name": "PDMRemoteControl",
+    "name": "PDMRemote",
     "docs": "https://github.com/rl1131/udi-pdmremote-poly",
     "type": "python3",
     "executable": "pdmremote.py",

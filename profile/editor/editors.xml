@@ -2,13 +2,13 @@
     <editor id="BOOL">
         <range uom="2" subset="0,1" />
     </editor>
-    <editor id="MODE">
-        <range uom="25" subset="0,1" nls="FAN_MODE" />
+    <editor id="FMODE">
+        <range uom="25" min="0" max="1" nls="FAN_MODE" />
     </editor>
-    <editor id="SPEED">
+    <editor id="FSPEED">
         <range uom="25" subset="0-6" nls="FAN_SPEED" />
     </editor>
     <editor id="GPIO">
-        <range uom="25" subset="2-27" />
+        <range uom="56" min="2" max="27" prec="0" step="1" />
     </editor>
 </editors>

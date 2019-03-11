@@ -1,17 +1,18 @@
-# Polyglot v2 Node Server for RF Ceiling Fan Control
+# Polyglot v2 Node Server for PDM/OOK Modulated Remote Controls
 
 NOTE: THIS IS A WORK IN PROGRESS and not yet ready
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/rl1131/udi-wemo-poly/blob/master/LICENSE)
 
-### 
+### Overview
 
-This version of this node server provides most of the functionality of the remote control shown at the bottom of this page.
+This [Polyglot v2](https://github.com/UniversalDevicesInc/polyglot-v2) node 
+server provides an interface between the ISY home automation controller from 
+Universal Devices Inc. and RF Controlled Ceiling fans.
 
-![RemoteFront](https://user-images.githubusercontent.com/11381527/53689078-798ca480-3d02-11e9-8911-456f7b8fbbf2.jpg)
-![RemoteBack](https://user-images.githubusercontent.com/11381527/53689081-8ad5b100-3d02-11e9-9a47-622d836fce09.jpg)
-
-This [Polyglot v2](https://github.com/UniversalDevicesInc/polyglot-v2) node server provides an interface between the ISY home automation controller from Universal Devices Inc. and RF Controlled Ceiling fans.
+Many remote controls out in the wild use a basic form of modulation
+called OOK or PDM to control their respective devices.  Most RF controlled
+ceiling 
 
 These fans tend to have very similar RF codes.  So, you may get
 this node server to work with other fans.  At some point I'll
@@ -23,12 +24,17 @@ then be easily added to this node server.
 You can install this node server by manually running
 ```
 cd ~/.polyglot/nodeservers
-git clone https://github.com/rl1131/udi-rffans-poly.git udi-rffans-poly
-cd udi-rffans-poly
+git clone https://github.com/rl1131/udi-pdmremote-poly.git udi-pdmremote-poly
+cd udi-pdmremote-poly
 ./install.sh
 ```
 
 After that is complete use the Polyglot web interface to add the node server.
+
+### Currently Supported Device(s)
+
+Harbor Breeze 6 Speed Fan Remote Control
+![HB6Speed](https://user-images.githubusercontent.com/11381527/54090368-d99dcf00-4330-11e9-9670-c33772a9025e.jpg)
 
 ### Hardware
 

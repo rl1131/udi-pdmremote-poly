@@ -15,8 +15,8 @@
     <nodeDef id="HB6REMOTE" nls="HB6">
         <editors />
         <sts>
-            <st id="ST" editor="SPEED" />
-            <st id="GV0" editor="MODE" />
+            <st id="ST"  editor="FSPEED" />
+            <st id="GV0" editor="FMODE" />
             <st id="GV1" editor="GPIO" />
         </sts>
         <cmds>
@@ -29,9 +29,15 @@
                 <cmd id="BRT" />
                 <cmd id="DIM" />
                 <cmd id="QUERY" />
-                <cmd id="SETSPEED" editor="SPEED">
-                <cmd id="SETMODE" editor="MODE">
-                <cmd id="SETGPIO" editor="GPIO">
+                <cmd id="SETSPEED">
+                    <p id="" editor="FSPEED" init="ST" />
+                </cmd>
+                <cmd id="SETMODE">
+                    <p id="" editor="FMODE" init="GV0" />
+                </cmd>
+                <cmd id="SETGPIO">
+                    <p id="" editor="GPIO" init="GV1" />
+                </cmd>
             </accepts>
         </cmds>
     </nodeDef>

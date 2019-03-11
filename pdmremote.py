@@ -11,10 +11,7 @@ from remotedb import harbor_breeze_6_speed_dc_remote_0 as hbremote
 LOGGER = polyinterface.LOGGER
 LOGGER.info('PDM Remote node server running on Python version {}'.format(sys.version_info))
 
-nodes_to_instantiate = [ ('00', 'Harbor Breeze 6 Button Remote', hbremote, 17) ]
-
-DFON_SPEED_DEF = 3
-
+nodes_to_instantiate = [ ('00', 'Harbor Breeze 6 Speed Remote', hbremote, 17) ]
 
 class Control(polyinterface.Controller):
     """ Polyglot Node Server Controller for PDM Type Remote Controls """
@@ -120,7 +117,7 @@ class HB6SpeedRemote(polyinterface.Node):
 
     SUMMER = 0
     WINTER = 1
-    GPIO_PIN_DEF = 17
+    DFON_SPEED_DEF = 3
     speedcmd = [ ('off', 'dn1', 'dn2', 'dn3', 'dn4', 'dn5', 'dn6'),
                  ('off', 'up1', 'up2', 'up3', 'up4', 'up5', 'up6') ]
 
@@ -163,7 +160,7 @@ class HB6SpeedRemote(polyinterface.Node):
 
     def dfon(self, command=None):
         """ ISY Request the device be turned on """
-        self.speed = DFON_SPEED_DEF
+        self.speed = self.DFON_SPEED_DEF
         self._setspeed()
         return True
 
@@ -183,7 +180,7 @@ class HB6SpeedRemote(polyinterface.Node):
 
     def query(self, command=None):
         """ ISY Requested that we query the remote device """
-        LOGGER.debug('query of {} requested'.format(self.device.name))
+        LOGGER.debug('query of {} requested'.format(self.name))
         self.updateInfo()
         self.reportDrivers()
         return True
@@ -194,6 +191,11 @@ class HB6SpeedRemote(polyinterface.Node):
             self.mode = self.WINTER
         else:
             self.mode = self.SUMMER
+        self.setDriver('GV0', self.mode)
+        if self.mode == self.SUMMER:
+            self.pdmremote.send('toggledown')
+        else:
+            self.pdmremote.send('toggleup')
         return True
 
     def setspeed(self, command=None):
@@ -206,24 +208,24 @@ class HB6SpeedRemote(polyinterface.Node):
         val = int(command.get('value'))
         if val <= 27:
             self.gpiopin = val
+        self.setDriver('GV1', self.gpiopin)
         self.pdmremote = PDMRemote(self.remotedata, self.gpiopin)
 
-    drivers = [ {'driver': 'ST', 'value': 0, 'uom': 25},
-                {'driver': 'GV0', 'value' : 0, 'uom' : 25},
-                {'driver': 'GV1', 'value' : 0, 'uom' : 25}
+    drivers = [ {'driver': 'ST',   'value' : 0, 'uom' : 25},
+                {'driver': 'GV0',  'value' : 0, 'uom' : 25},
+                {'driver': 'GV1',  'value' : 0, 'uom' : 25}
               ]
 
-    commands = {
-                   'DON': don,
-                   'DOF': dof,
-                   'DFON': dfon,
-                   'DFOF': dof,
-                   'BRT' : speedinc,
-                   'DIM' : speeddec,
-                   'QUERY': query,
+    commands = {   'DON'      : don,
+                   'DOF'      : dof,
+                   'DFON'     : dfon,
+                   'DFOF'     : dof,
+                   'BRT'      : speedinc,
+                   'DIM'      : speeddec,
+                   'QUERY'    : query,
                    'SETSPEED' : setspeed,
-                   'SETMODE' : setmode,
-                   'SETGPIO' : setgpio
+                   'SETMODE'  : setmode,
+                   'SETGPIO'  : setgpio
                }
 
     id = 'HB6REMOTE'
