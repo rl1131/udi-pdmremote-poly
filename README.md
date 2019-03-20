@@ -1,23 +1,20 @@
 # Polyglot v2 Node Server for PDM/OOK Modulated Remote Controls
 
-NOTE: THIS IS A WORK IN PROGRESS and not yet ready
-
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/rl1131/udi-wemo-poly/blob/master/LICENSE)
 
 ### Overview
 
 This [Polyglot v2](https://github.com/UniversalDevicesInc/polyglot-v2) node 
 server provides an interface between the ISY home automation controller from 
-Universal Devices Inc. and RF Controlled Ceiling fans.
+Universal Devices Inc. and RF controlled devices like a ceiling fan.
 
 Many remote controls out in the wild use a basic form of modulation
 called OOK or PDM to control their respective devices.  Most RF controlled
-ceiling 
-
-These fans tend to have very similar RF codes.  So, you may get
-this node server to work with other fans.  At some point I'll
-create a How-To page for reverse engineering the codes which can
-then be easily added to this node server.
+ceiling fans use this form of RF control.  Additionally most RF remote controls
+operate in either the 315 MHz band or the 433 MHz band.  This combination makes
+these controls easy to capture and decode into on-off timed pairs that can be
+recreated on a Raspberry Pi (or Arduino) using a GPIO pin and an inexpensive
+radio transmitter.
 
 ### Installation instructions
 
@@ -36,17 +33,30 @@ After that is complete use the Polyglot web interface to add the node server.
 Harbor Breeze 6 Speed Fan Remote Control
 ![HB6Speed](https://user-images.githubusercontent.com/11381527/54090368-d99dcf00-4330-11e9-9670-c33772a9025e.jpg)
 
+### Adding your own device
+
+First [hack your remote](https://github.com/rl1131/remotehack)
+Then follow the example for the Harbor Breeze 6 Speed remote already included here.
+Pull requests are welcome ;-)
+
 ### Hardware
 
-It is required that a 315 MHz transmitter be connected to the Raspberry Pi that is running this node server.
+It is required that a 315 MHz (or 433 MHz) transmitter be connected to the 
+Raspberry Pi that is running this node server.
 
-These transmitters (along with a receiver) are available on Amazon for about $5 shipped (or $0.73 each from aliexpress.com).  Only the transmitter is needed for this project... the receiver is not used.
+These transmitters (along with a receiver) are available on Amazon for about 
+$5 shipped (or $0.73 each from aliexpress.com).  Only the transmitter is needed 
+for this project... the receiver is not used.  These transmitters can be purchased
+in either the 315 MHz or 433 MHz frequency.  Be sure to get the right one for 
+your application.
 
 [315MHz Transmitter](https://www.amazon.com/HiLetgo-Transmitter-Receiver-Arduino-Raspberry/dp/B00LNADJS6/)
 
-First solder an antenna to the transmitter.  A length of wire that is about 8.9 inches long.
+First solder an antenna to the transmitter.  A length of wire that is about 
+8.9 inches long.
 
-Connect the transmitter to the Raspberry Pi using the pinout (see photos and GPIO pinout):
+Connect the transmitter to the Raspberry Pi using the pinout (see photos and 
+GPIO pinout):
 
 ![radioconnecttable](https://user-images.githubusercontent.com/11381527/53689792-78fc0a00-3d12-11e9-8186-21fd6b45ef95.jpg)
 
